@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lazy load</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <h1>Lazy load (Intersection Observer)</h1>
+
+
+    <!-- <ul class="feed">
+      <li class="feed__item">
+        <img
+          src="./images/1.jpg"
+          alt="1"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          src="./images/2.jpg"
+          alt="2"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          src="./images/3.jpg"
+          alt="3"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          src="./images/4.jpg"
+          alt="4"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          src="./images/5.jpg"
+          alt="5"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          src="./images/6.jpg"
+          alt="6"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          src="./images/7.jpg"
+          alt="7"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          src="./images/8.jpg"
+          alt="8"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          src="./images/9.jpg"
+          alt="9"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          src="./images/10.jpg"
+          alt="10"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          src="./images/1.jpg"
+          alt="1"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          src="./images/2.jpg"
+          alt="2"
+          width="640"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+    </ul> -->
+
+    <ul class="feed">
+        <li class="feed__item">
+            <img data-lazy="./images/1.jpg" alt="sky"
+                width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+        <li class="feed__item">
+            <img data-lazy="./images/2.jpg"
+                alt="sky" width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+        <li class="feed__item">
+            <img data-lazy="./images/3.jpg"
+                alt="sky" width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+        <li class="feed__item">
+            <img data-lazy="./images/4.jpg"
+                alt="sky" width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+        <li class="feed__item">
+            <img data-lazy="./images/5.jpg"
+                alt="sky" width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+        <li class="feed__item">
+            <img data-lazy="./images/6.jpg" alt="sky"
+                width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+        <li class="feed__item">
+            <img data-lazy="./images/7.jpg" alt="sky"
+                width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+        <li class="feed__item">
+            <img data-lazy="./images/8.jpg"
+                alt="sky" width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+        <li class="feed__item">
+            <img data-lazy="./images/9.jpg"
+                alt="sky" width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+        <li class="feed__item">
+            <img data-lazy="./images/10.jpg"
+                alt="sky" width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+        <li class="feed__item">
+            <img data-lazy="./images/1.jpg" alt="sky" width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+        <li class="feed__item">
+            <img data-lazy="./images/2.jpg" alt="sky"
+                width="640" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+                soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+                perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+                fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+                tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+                dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+                minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+                laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+                quas cum doloremque maiores recusandae, assumenda similique cumque in.
+                Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+                similique, quisquam doloribus asperiores officiis ab distinctio.
+            </p>
+        </li>
+    </ul>
+
+    <script src="./index.js" type="module"></script>
+</body>
+
+</html>
